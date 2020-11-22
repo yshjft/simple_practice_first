@@ -37,28 +37,28 @@
    }
    ```
 
-5. css module
+5. css module           
    리액트 프로젝트에서 컴포넌트를 스타일링 할 때 CSS Module 이라는 기술을 사용하면, CSS 클래스가 중첩되는 것을 완벽히 방지할 수 있다.
 
-- example.module.css
+   - example.module.css
 
-```
-.example {
-  background: black;
-  color: white;
-  padding: 2rem;
-}
-```
+   ```
+   .example {
+     background: black;
+     color: white;
+     padding: 2rem;
+   }
+   ```
 
-- Example.js
+   - Example.js
 
-```
-import React from "react";
-import styles from "./example.module.css";
+   ```
+   import React from "react";
+   import styles from "./example.module.css";
 
-function Example() {
-  return <div className={styles.example}>{styles.example}</div>;
-}
+   function Example() {
+     return <div className={styles.example}>{styles.example}</div>;
+   }
 
-export default Example;
-```
+   export default Example;
+   ```
