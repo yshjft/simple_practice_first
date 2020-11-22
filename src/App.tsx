@@ -1,9 +1,9 @@
 import React from 'react';
-import './test.scss'
+import styles from './test.module.scss'
 
 function App() {
   return (
-    <div className="App">
+    <div className={`${styles.App}`}>
      start !!
     </div>
   );
