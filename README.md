@@ -37,7 +37,9 @@
    }
    ```
 
-5. css module  
+### 설정
+
+1. css module  
    리액트 프로젝트에서 컴포넌트를 스타일링 할 때 CSS Module 이라는 기술을 사용하면, CSS 클래스가 중첩되는 것을 완벽히 방지할 수 있다. (즉 CSS Module은 클래스의 이름을 고유하게 바꾸어 준다)
 
    - example.module.css
@@ -63,7 +65,7 @@
    export default Example;
    ```
 
-6. npm run eject                     
+2. npm run eject                     
    npm run eject이라는 것을 통해서 create-react-app에 숨겨져 있는 설정들을 확인할 수 있다.(한번 eject을 하면 되돌릴 수 없으므로 신중히 선택하라고 한다.) 대표적으로 웹팩 설정을 확인할 수 있다. 이 웹팩 설정을 수정하여서 CSS Module을 활성화 화였다.
 
    - 비활성화 : test.module.css
