@@ -63,7 +63,7 @@
    export default Example;
    ```
 
-6. npm run eject
+6. npm run eject                     
    npm run eject이라는 것을 통해서 create-react-app에 숨겨져 있는 설정들을 확인할 수 있다.(한번 eject을 하면 되돌릴 수 없으므로 신중히 선택하라고 한다.) 대표적으로 웹팩 설정을 확인할 수 있다. 이 웹팩 설정을 수정하여서 CSS Module을 활성화 화였다.
 
    - 비활성화 : test.module.css
