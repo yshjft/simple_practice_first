@@ -65,7 +65,7 @@
    export default Example;
    ```
 
-2. npm run eject                     
+2. npm run eject  
    npm run eject이라는 것을 통해서 create-react-app에 숨겨져 있는 설정들을 확인할 수 있다.(한번 eject을 하면 되돌릴 수 없으므로 신중히 선택하라고 한다.) 대표적으로 웹팩 설정을 확인할 수 있다. 이 웹팩 설정을 수정하여서 CSS Module을 활성화 화였다.
 
    - 비활성화 : test.module.css
@@ -97,3 +97,29 @@
    위와 같이 수정하는데 조금 고생을 하였는데 아래를 참고하여 수정할 수 있었다.
 
    - https://github.com/rails/webpacker/issues/2197
+
+   webpack.config.js에서 sass도 css module 활성화 하듯이 수정하였다. 사실 이게 정확학 맞는지 모르겠다..ㅎㅎㅎㅎ
+
+   ```
+   {
+      test: sassRegex,
+      exclude: sassModuleRegex,
+      use: getStyleLoaders(
+         {
+         importLoaders: 3,
+         sourceMap: isEnvProduction
+            ? shouldUseSourceMap
+            : isEnvDevelopment,
+            modules: {
+               localIdentName: "[name]__[local]___[hash:base64:5]",
+            },
+         },
+         'sass-loader'
+      ),
+      // Don't consider CSS imports dead code even if the
+      // containing package claims to have no side effects.
+      // Remove this when webpack adds a warning or an error for this.
+      // See https://github.com/webpack/webpack/issues/6571
+      sideEffects: true,
+   },
+   ```

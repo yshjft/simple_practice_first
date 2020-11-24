@@ -500,6 +500,9 @@ module.exports = function (webpackEnv) {
                   sourceMap: isEnvProduction
                     ? shouldUseSourceMap
                     : isEnvDevelopment,
+                    modules: {
+                      localIdentName: "[name]__[local]___[hash:base64:5]",
+                    },	
                 },
                 'sass-loader'
               ),
