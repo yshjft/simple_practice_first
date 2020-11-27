@@ -1,6 +1,8 @@
 import React from 'react';
+import  {BrowserRouter} from 'react-router-dom'
 import styles from './test.scss'
 import cssStyle from './test.css'
+
 
 function App() {
   return (
