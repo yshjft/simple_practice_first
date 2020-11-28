@@ -1,7 +1,11 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Main from './pages/main'
-import foodTypes from './pages/food/types'
+import foodTypes from './pages/food/types/FoodTypes'
+import KoreanFood from './pages/food/types/korean/Korean'
+import JapaneseFood from './pages/food/types/japanese/Japanese'
+import ChineseFood from './pages/food/types/chinese/Chinese'
+import WesternFood from './pages/food/types/western/Western'
 import Cafe from './pages/cafe'
 import Park from './pages/park'
 import BlankLayout from './layouts/BlankLayout'
@@ -24,8 +28,30 @@ const routes = [
         component: BlankLayout,
         routes: [
             {
-                path: '/food/type',
-                component: foodTypes
+                path: '/food/types',
+                component: foodTypes,
+                routes: [
+                    {
+                        path: '/food/types/korean',
+                        component: KoreanFood,
+                        exact:true,
+                    },
+                    {
+                        path: '/food/types/japanese',
+                        component: JapaneseFood,
+                        exact:true,
+                    },
+                    {
+                        path: '/food/types/chinese',
+                        component: ChineseFood,
+                        exact:true,
+                    },
+                    {
+                        path: '/food/types/western',
+                        component: WesternFood,
+                        exact:true,
+                    },
+                ]
             }
         ]
     },
@@ -41,8 +67,10 @@ const routes = [
     },
 ]
 
-//이거 다른 사람 코드 보고 한것이니 생갈 할것
  function RouteWithSubRoutes(route:any){
+     console.log('compo = ', route.component)
+     console.log('route = ', route)
+     console.log(' routes = ',route.routes)
     return(
         <Route
             path={route.path}
@@ -69,8 +97,8 @@ export default function  RouteConfig() {
     return(
         <Router>
             <Switch>
-                {routes.map((route, index)=>
-                    <RouteWithSubRoutes key={index} {...route}/>
+                {routes.map((route, index)=>{
+                    return <RouteWithSubRoutes key={index} {...route}/>}
                 )}
             </Switch>
         </Router>
