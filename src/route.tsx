@@ -9,6 +9,7 @@ import WesternFood from './pages/food/types/western/Western'
 import Cafe from './pages/cafe'
 import Park from './pages/park'
 import BlankLayout from './layouts/BlankLayout'
+import FoodTypes from './pages/food/types/FoodTypes'
 
 interface IRoute {
     path: string
@@ -29,48 +30,22 @@ const routes = [
         routes: [
             {
                 path: '/food/types',
-                component: foodTypes,
-                routes: [
-                    {
-                        path: '/food/types/korean',
-                        component: KoreanFood,
-                        exact:true,
-                    },
-                    {
-                        path: '/food/types/japanese',
-                        component: JapaneseFood,
-                        exact:true,
-                    },
-                    {
-                        path: '/food/types/chinese',
-                        component: ChineseFood,
-                        exact:true,
-                    },
-                    {
-                        path: '/food/types/western',
-                        component: WesternFood,
-                        exact:true,
-                    },
-                ]
-            }
+                component: FoodTypes,
+            },
+            
         ]
     },
     {
         path: '/cafe',
         component: Cafe,
-        exact: true,
     },
     {
         path: '/park',
         component: Park,
-        exact: true,
     },
 ]
 
  function RouteWithSubRoutes(route:any){
-     console.log('compo = ', route.component)
-     console.log('route = ', route)
-     console.log(' routes = ',route.routes)
     return(
         <Route
             path={route.path}
