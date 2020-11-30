@@ -26,14 +26,7 @@ const routes = [
     },
     {
         path: '/food',
-        component: BlankLayout,
-        routes: [
-            {
-                path: '/food/types',
-                component: FoodTypes,
-            },
-            
-        ]
+        component: FoodTypes
     },
     {
         path: '/cafe',
