@@ -3,9 +3,29 @@
   height: 100%;
 }
 .carouselArea {
-  // height: 70%;s
+  height: 70%;
+  overflow: hidden;
+  position: relative;
+  .carouselSlide {
+    display: flex;
+  }
+  .prevBtn {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0%, -50%);
+    width: 5rem;
+    height: 4rem;
+  }
+  .nextBtn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0%, -50%);
+    width: 5rem;
+    height: 4rem;
+  }
 }
 .selectArea {
-  // background-color: blue;
   height: 30%;
 }
