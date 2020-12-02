@@ -18,67 +18,48 @@ const titleWithSub = [
     {
         title: '산책은?',
         sub: '공원 가야지'
-    },
-    {
-        title: '산책은?',
-        sub: '공원 가야,지'
-    },
-    {
-        title: '산책은?',
-        sub: '공원 가야지'
-    },
-    {
-        title: '산책은?',
-        sub: '공원 가야지'
-    },
-    {
-        title: '산책은?',
-        sub: '공원 가야지'
-    },
-    {
-        title: '산책은?',
-        sub: '공원 가야지'
-    },
-    {
-        title: '산책은?',
-        sub: '공원 가야지'
     }
 ]
 
 
 const Main = ()=>{
     const [sliderIndex, setSliderIndex] = useState<number>(0)
-    const carouselSlideRef = useRef(document.createElement('div'))
-
-    useEffect(()=>{
-        carouselSlideRef.current.style.transition = "all 0.5s ease-in-out";
-        carouselSlideRef.current.style.transform = `translateX(-${sliderIndex}00%)`;
-    }, [sliderIndex])
+    // const carouselSlideRef = useRef(document.createElement('div'))
 
 
     function prevBtnClick(){
-        carouselSlideRef.current.style.transition = "transform 0.4s ease-in-out"
+        if(sliderIndex === 0){
+            setSliderIndex(3)
+            return
+        }
+
         setSliderIndex(sliderIndex-1)
     }
 
     function nextBtnClick(){
-        carouselSlideRef.current.style.transition = "transform 0.4s ease-in-out"
+        if(sliderIndex === 3){
+            setSliderIndex(0)
+            return
+        }
         setSliderIndex(sliderIndex+1)
     }
 
     return (
         <div className={`${styles.mainLayout}`}>
             <div className={`${styles.carouselArea}`}>
-                <div ref={carouselSlideRef} className={`${styles.carouselSlide}`}>
-                    {titleWithSub.map((obj, index) =>
-                        <>
-                            {index}
-                            <Slide key={index} title={obj.title} sub={obj.sub}/>
-                        </>
-                    )}
+                <div className={`${styles.carouselSlide}`}>
+                    <Slide 
+                        title={titleWithSub[sliderIndex].title} 
+                        sub={titleWithSub[sliderIndex].sub} 
+                        titleWithSub={titleWithSub} 
+                        sliderIndex={sliderIndex} 
+                        setSliderIndex={setSliderIndex}
+                    />
                 </div>
                 <button className={`${styles.prevBtn}`} onClick={()=>prevBtnClick()}>{`<`}</button>
                 <button className={`${styles.nextBtn}`} onClick={()=>nextBtnClick()}>{`>`}</button>
+                
+                
             </div>
             <div className={`${styles.selectArea}`}>
                 select part
