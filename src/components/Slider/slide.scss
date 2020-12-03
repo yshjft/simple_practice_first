@@ -1,5 +1,4 @@
 .slideLayout {
-  animation: fadein 2s;
   width: 100%;
   height: 100%;
   display: flex;
@@ -36,5 +35,14 @@
       border-radius: 1rem;
       cursor: pointer;
     }
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

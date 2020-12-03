@@ -24,8 +24,13 @@ const titleWithSub = [
 
 const Main = ()=>{
     const [sliderIndex, setSliderIndex] = useState<number>(0)
-    // const carouselSlideRef = useRef(document.createElement('div'))
+    const tmp = useRef(document.createElement('div'))
 
+    useEffect(()=>{
+        console.log(123)
+        tmp.current.style.transition='opacity 0.5s ease-in-out 0.5s'
+        tmp.current.style.opacity = '1'
+    }, [sliderIndex])
 
     function prevBtnClick(){
         if(sliderIndex === 0){
@@ -49,6 +54,7 @@ const Main = ()=>{
             <div className={`${styles.carouselArea}`}>
                 <div className={`${styles.carouselSlide}`}>
                     <Slide 
+                        ref={tmp}
                         title={titleWithSub[sliderIndex].title} 
                         sub={titleWithSub[sliderIndex].sub} 
                         titleWithSub={titleWithSub} 

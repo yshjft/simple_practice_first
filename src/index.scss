@@ -10,9 +10,23 @@ body {
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 1060px) {
   html,
   body {
-    font-size: 2px;
+    font-size: 6px;
+  }
+}
+
+@media (max-width: 640px) {
+  html,
+  body {
+    font-size: 4.5px;
+  }
+}
+
+@media (max-width: 400px) {
+  html,
+  body {
+    font-size: 3px;
   }
 }
