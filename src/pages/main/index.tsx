@@ -65,7 +65,6 @@ const Main = ()=>{
                 <button className={`${styles.prevBtn}`} onClick={()=>prevBtnClick()}>{`<`}</button>
                 <button className={`${styles.nextBtn}`} onClick={()=>nextBtnClick()}>{`>`}</button>
                 
-                
             </div>
             <div className={`${styles.selectArea}`}>
                 select part
