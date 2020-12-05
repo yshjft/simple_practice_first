@@ -55,4 +55,16 @@
 }
 .selectArea {
   height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.selectLayout {
+  display: flex;
+}
+
+@media (max-width: 600px) {
+  .selectLayout {
+    display: block;
+  }
 }

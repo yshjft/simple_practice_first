@@ -1,8 +1,11 @@
 import React from 'react'
+import CommonLayout from '../../layouts/CommonLayout'
 
 const Park = () => {
     return(
-        <div>this Park page</div>
+        <CommonLayout>
+            <div>this Park page</div>
+        </CommonLayout>
     )
 }
 

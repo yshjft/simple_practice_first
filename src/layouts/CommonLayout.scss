@@ -1,0 +1,12 @@
+.entireLayout {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .footerArea {
+    margin-top: auto; //위 쪽에 가능한 가장 큰 마진을 준다
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,8 +1,11 @@
 import React  from 'react'
+import CommonLayout from '../../layouts/CommonLayout'
 
 const Cafe = ()=>{
     return (
-        <div>this is cafe page</div>
+        <CommonLayout>
+            <div>this is cafe page</div>
+        </CommonLayout>
     )
 }
 

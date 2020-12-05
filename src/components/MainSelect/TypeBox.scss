@@ -1,0 +1,22 @@
+.typeBoxLayout {
+  min-width: 30rem;
+  margin: 5rem;
+  padding: 2rem;
+  color: black;
+  border: 5px solid black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  .title {
+    font-size: 5rem;
+    font-weight: bold;
+  }
+}
+.typeBoxLayout:hover {
+  transition: all 0.3s;
+  border: 5px solid white;
+  background-color: black;
+  color: white;
+}

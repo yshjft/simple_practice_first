@@ -1,8 +1,11 @@
 import React  from 'react'
+import CommonLayout from '../../../layouts/CommonLayout'
 
 const FoodTypes = ()=>{
     return (
-        <div>this is Food Type page</div>
+        <CommonLayout>
+            <div>this is Food Type page</div>
+        </CommonLayout>
     )
 }
 

@@ -14,28 +14,25 @@ interface ISlidProps {
     setSliderIndex: React.Dispatch<React.SetStateAction<number>>
 }
 
-const Slide = React.forwardRef<HTMLDivElement, ISlidProps>(
-    (props, forwardedRef) => {
-        const {title, sub, titleWithSub, sliderIndex, setSliderIndex} = props
-        return(
-            <div ref={forwardedRef}  className={`${styles.slideLayout}`}>
-                <div> 
-                    <div className={`${styles.title}`}>{title}</div>
-                    <div className={`${styles.sub}`}>{sub}</div>
-                    <div className={`${styles.markArea}`}>
-                        {titleWithSub.map((obj, index) => {
-                            if(index === sliderIndex){
-                                return <div key={index} className={`${styles.filledMark}`}></div>
-                            }else{
-                                return <div key={index} className={`${styles.blankMark}`} onClick={()=>setSliderIndex(index)}></div>
-                            }
-                        })}
+const Slide =(props:ISlidProps) => {
+    const {title, sub, titleWithSub, sliderIndex, setSliderIndex} = props
+    return(
+        <div className={`${styles.slideLayout}`}>
+            <div> 
+                <div className={`${styles.title}`}>{title}</div>
+                <div className={`${styles.sub}`}>{sub}</div>
+                <div className={`${styles.markArea}`}>
+                    {titleWithSub.map((obj, index) => {
+                        if(index === sliderIndex){
+                            return <div key={index} className={`${styles.filledMark}`}></div>
+                        }else{
+                            return <div key={index} className={`${styles.blankMark}`} onClick={()=>setSliderIndex(index)}></div>
+                        }
+                    })}
                 </div>
-                </div>
-                
             </div>
-        )
-    }
-)
+        </div>
+    )
+}
 
 export default Slide
