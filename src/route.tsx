@@ -1,5 +1,5 @@
 import React from 'react'
-import { TransitionGroup, CSSTransition} from "react-transition-group";
+import { TransitionGroup, CSSTransition} from "react-transition-group" //사용할지 안할지 모름
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Main from './pages/main'
 import foodTypes from './pages/food/types/FoodTypes'
@@ -26,7 +26,25 @@ const routes = [
     },
     {
         path: '/food',
-        component: FoodTypes
+        component: FoodTypes,
+        routes: [
+            {
+                path: '/food/korean',
+                component: KoreanFood
+            },
+            {
+                path: '/food/japanese',
+                component: JapaneseFood
+            },
+            {
+                path: '/food/chinese',
+                component: ChineseFood
+            },
+            {
+                path: '/food/western',
+                component: WesternFood
+            }
+        ]
     },
     {
         path: '/cafe',
@@ -48,9 +66,7 @@ const routes = [
                         <route.component {...props} routes={route.routes}>
                             {route.routes && (
                                 <Switch>
-                                    {route.routes.map((r:any, i:number)=>(
-                                        <RouteWithSubRoutes key={i} {...r}/>
-                                    ))}
+                                    {route.routes.map((r:any, i:number)=> <RouteWithSubRoutes key={i} {...r}/>)}
                                 </Switch>
                             )}
                         </route.component>

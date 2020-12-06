@@ -26,6 +26,11 @@
       font-weight: bold;
       cursor: pointer;
     }
+    .btn:hover {
+      background-color: black;
+      color: white;
+      border-radius: 40px;
+    }
     .selectedBtn {
       width: 7rem;
       margin: 0.5rem 3rem;

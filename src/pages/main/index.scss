@@ -3,11 +3,11 @@
   height: 100%;
 }
 .carouselArea {
-  height: 70%;
+  height: 65%;
   overflow: hidden;
   position: relative;
   .carouselSlide {
-    height: 90%;
+    height: 100%;
     width: 100%;
   }
   .prevBtn {
@@ -54,7 +54,7 @@
   }
 }
 .selectArea {
-  height: 30%;
+  height: 35%;
   display: flex;
   justify-content: center;
   align-items: center;

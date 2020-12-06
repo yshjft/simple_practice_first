@@ -61,7 +61,7 @@ const Main = (props:RouteComponentProps)=>{
             </div>
             <div className={`${styles.selectArea}`}>
                 <div className={`${styles.selectLayout}`}>
-                    <TypeBox title={'밥 뭐 없나?'} to={"/food"}/>
+                    <TypeBox title={'밥 뭐 없나?'} to={"/food/korean"}/>
                     <TypeBox title={'카페 뭐 없나?'} to={"/cafe"}/>
                     <TypeBox title={'공원 뭐 없나?'} to={"/park"}/>
                 </div>

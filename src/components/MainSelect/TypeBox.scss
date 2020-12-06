@@ -3,7 +3,7 @@
   margin: 5rem;
   padding: 2rem;
   color: black;
-  border: 5px solid black;
+  border: 3px solid black;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -16,7 +16,6 @@
 }
 .typeBoxLayout:hover {
   transition: all 0.3s;
-  border: 5px solid white;
   background-color: black;
   color: white;
 }
