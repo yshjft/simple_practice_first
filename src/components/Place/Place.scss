@@ -1,0 +1,57 @@
+.place {
+  width: 30rem;
+  height: 35rem;
+  margin: 5rem;
+  border: 1.5px solid black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  .imgArea {
+    width: 28rem;
+    height: 22rem;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: silver;
+    .noImg {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+      border-radius: 10px;
+      background-color: black;
+    }
+    .Img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+  }
+  .infoArea {
+    height: 8rem;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .infoName {
+      margin: 1rem;
+      text-align: center;
+      font-size: 4rem;
+      font-weight: bold;
+    }
+    .infoScore {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+}
+.place:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+}
