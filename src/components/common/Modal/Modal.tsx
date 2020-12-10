@@ -10,6 +10,9 @@ const Modal = ()=>{
                 <div className={`${styles.info}`}>pitcure</div>
                 <div className={`${styles.info}`}>name</div>
                 <div className={`${styles.info}`}>address</div>
+                <div className={`${styles.info}`}>menu</div>
+                <div className={`${styles.info}`}>menu</div>
+                <div className={`${styles.info}`}>score</div>
             </div>
         </>
     )

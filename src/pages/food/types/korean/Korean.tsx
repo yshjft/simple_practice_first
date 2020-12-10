@@ -8,7 +8,7 @@ const Korean = ()=>{
     return(
         <div>
            <Place/>
-           {/* <Modal/> */}
+           <Modal/>
         </div>
     )
 }
