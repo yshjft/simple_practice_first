@@ -4,7 +4,7 @@
 .modalArea {
   opacity: 0.5;
   background-color: black;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   height: 100%;
@@ -13,16 +13,48 @@
   align-items: center;
 }
 .modal {
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  right: 10%;
-  height: 80%;
+  position: fixed;
+  top: 5%;
+  left: 20%;
+  right: 20%;
+  height: 90%;
   background-color: white;
   border-radius: 10px;
   color: black;
   .contentArea {
     height: 92%;
+    display: flex;
+    justify-content: center;
+    .content {
+      height: 100%;
+      width: 100%;
+      .imgArea {
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .noImg {
+          width: 80%;
+          height: 90%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 10px;
+          background-color: black;
+          font-weight: bold;
+          font-size: 7rem;
+          color: white;
+        }
+        .Img {
+          width: 80%;
+          height: 90%;
+          border-radius: 10px;
+        }
+      }
+      .infoArea {
+        height: 60%;
+      }
+    }
   }
   .footerArea {
     height: 8%;
@@ -30,9 +62,9 @@
     justify-content: center;
     align-items: center;
     .btn {
-      font-size: 3rem;
+      font-size: 2rem;
       font-weight: bold;
-      padding: 1rem 10rem;
+      padding: 0.5rem 10rem;
       background-color: white;
       border-radius: 10px;
     }

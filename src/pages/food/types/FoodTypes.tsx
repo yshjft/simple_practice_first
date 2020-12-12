@@ -7,6 +7,10 @@ const FoodTypes = (props: any)=>{
     const [type, setType] = useState<string>('korean')
 
     useEffect(()=>{
+        history.push('/food/korean')
+    }, [])
+
+    useEffect(()=>{
         const foodType = location.pathname.split('/')
         setType(foodType[2])
     }, [location])
@@ -16,7 +20,7 @@ const FoodTypes = (props: any)=>{
     }
 
     return (
-            <CommonLayout>
+        <CommonLayout>
             <div className={`${styles.naviBtns}`}>
                 <div
                     onClick={()=>changeType('/food/korean')} 
