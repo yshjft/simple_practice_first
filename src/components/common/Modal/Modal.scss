@@ -1,3 +1,6 @@
+.modalLayout {
+  display: none;
+}
 .modalArea {
   opacity: 0.5;
   background-color: black;
@@ -11,13 +14,27 @@
 }
 .modal {
   position: absolute;
-  top: 40%;
-  left: 20%;
-  right: 20%;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  height: 80%;
   background-color: white;
   border-radius: 10px;
   color: black;
-  .info {
-    font-size: 3rem;
+  .contentArea {
+    height: 92%;
+  }
+  .footerArea {
+    height: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .btn {
+      font-size: 3rem;
+      font-weight: bold;
+      padding: 1rem 10rem;
+      background-color: white;
+      border-radius: 10px;
+    }
   }
 }
