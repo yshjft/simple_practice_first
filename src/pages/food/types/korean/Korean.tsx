@@ -6,12 +6,11 @@ import styles from './Korean.scss'
 
 const Korean = ()=>{
     const [modalVisible, setModalVisible] = useState<boolean>(false)
-    const contentRef = useRef(document.createElement('div'))
 
 
     return(
         <>
-            <div ref={contentRef} className={`${styles.koreanLayout}`}>
+            <div className={`${styles.koreanLayout}`}>
                 <Place setModalVisible={setModalVisible}/>
                 <Place setModalVisible={setModalVisible}/>
                 <Place setModalVisible={setModalVisible}/>
