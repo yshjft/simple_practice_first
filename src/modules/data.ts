@@ -115,6 +115,17 @@ export const foodData: FoodState[] = [
         ],
         score: 0
     },
+    {
+        id: 'wes-01',
+        type: 'western',
+        name: '미스터몽크',
+        address: '서울 서초구 강남대로16길 8 (우)06779',
+        menu: [
+            {name: '철판 불고기 덮밥', price: 8000},
+            {name: '오믈렛 라이스', price: 7500},
+        ],
+        score: 0
+    },
 ]
 
 export const cafeData = [

@@ -1,8 +1,33 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import {useSelector} from 'react-redux'
+import {RootState} from '../../../../modules/index'
+import {FoodState} from '../../../../modules/food'
+import Place from '../../../../components/Place/Place'
+import Modal from '../../../../components/common/Modal/Modal'
+import styles from './Chinese.scss'
 
 const Chinese = ()=>{
+    const [modalVisible, setModalVisible] = useState<boolean>(false)
+    const foods = useSelector((state:RootState)=>state.food)
+    const [chineseFoods, setChineseFoods] = useState<FoodState[]>([])
+
+    useEffect(()=>{
+        setChineseFoods(foods.filter(food => food.type === 'chinese'))
+    }, [foods])
+
     return(
-        <div>Chinese foods</div>
+        <>
+            <div className={`${styles.chineseLayout}`}>
+                {chineseFoods.map((chineseFood, index)=>
+                    <Place key={index}
+                        name={chineseFood.name}
+                        score={chineseFood.score}
+                        setModalVisible={setModalVisible}
+                    />
+                )}
+            </div>
+            <Modal modalVisible={modalVisible} setModalVisible={setModalVisible}/>
+        </>
     )
 }
 

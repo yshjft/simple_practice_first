@@ -32,13 +32,13 @@ const FoodTypes = (props: any)=>{
                     onClick={()=>changeType('/food/japanese')}
                     className={type === 'japanese' ? `${styles.selectedNaviBtn}`:`${styles.naviBtn}`}
                 >
-                    중식
+                    일식
                 </div>
                 <div
                     onClick={()=>changeType('/food/chinese')} 
                     className={type === 'chinese' ? `${styles.selectedNaviBtn}`:`${styles.naviBtn}`}
                 >
-                    일식
+                    중식
                 </div>
                 <div 
                     onClick={()=>changeType('/food/western')}

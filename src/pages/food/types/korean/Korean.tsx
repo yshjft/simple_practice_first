@@ -20,7 +20,13 @@ const Korean = ()=>{
     return(
         <>
             <div className={`${styles.koreanLayout}`}>
-                {koreanFoods.map((koreanFood, index) => <Place key={index} name={koreanFood.name} score={koreanFood.score} setModalVisible={setModalVisible}/>)}
+                {koreanFoods.map((koreanFood, index) => 
+                    <Place key={index} 
+                        name={koreanFood.name} 
+                        score={koreanFood.score}
+                        setModalVisible={setModalVisible}
+                    />
+                )}
             </div>
             <Modal modalVisible={modalVisible} setModalVisible={setModalVisible}/>
         </>
