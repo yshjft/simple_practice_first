@@ -19,7 +19,7 @@ const Japanese = ()=>{
 
     return(
         <>
-            <div className={`${styles.japaneseLayout}`}>
+            <ul className={`${styles.japaneseLayout}`}>
                 {japaneseFoods.map((japaneseFood, index)=> 
                     <Place key={index} 
                         name={japaneseFood.name}
@@ -27,7 +27,7 @@ const Japanese = ()=>{
                         setModalVisible={setModalVisible}
                     />
                 )}
-            </div>
+            </ul>
             <Modal modalVisible={modalVisible} setModalVisible={setModalVisible}/>
         </>
     )
