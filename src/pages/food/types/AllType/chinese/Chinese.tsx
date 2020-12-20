@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import {useSelector} from 'react-redux'
-import {RootState} from '../../../../modules/index'
-import {FoodState} from '../../../../modules/food'
-import Place from '../../../../components/Place/Place'
-import Modal from '../../../../components/common/Modal/Modal'
-import styles from './Chinese.scss'
+import {RootState} from '../../../../../modules/index'
+import {FoodState} from '../../../../../modules/food'
+import Place from '../../../../../components/Place/Place'
+import Modal from '../../../../../components/common/Modal/Modal'
+import styles from '../index.scss'
 
 const Chinese = ()=>{
     const [modalVisible, setModalVisible] = useState<boolean>(false)
@@ -17,7 +17,7 @@ const Chinese = ()=>{
 
     return(
         <>
-            <div className={`${styles.chineseLayout}`}>
+            <div className={`${styles.gridContainer}`}>
                 {chineseFoods.map((chineseFood, index)=>
                     <Place key={index}
                         name={chineseFood.name}

@@ -47,9 +47,7 @@ const FoodTypes = (props: any)=>{
                     양식
                 </div>
             </div>
-            <div className={`${styles.test}`}>
-                {children}
-            </div>
+            {children}
         </CommonLayout>
     )
 }

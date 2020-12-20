@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import {RootState} from '../../../../modules/index'
-import {FoodState} from '../../../../modules/food'
-import Place from '../../../../components/Place/Place'
-import Modal from '../../../../components/common/Modal/Modal'
-import styles from './Korean.scss'
+import {RootState} from '../../../../../modules/index'
+import {FoodState} from '../../../../../modules/food'
+import Place from '../../../../../components/Place/Place'
+import Modal from '../../../../../components/common/Modal/Modal'
+import styles from '../index.scss'
 
 
 
@@ -19,7 +19,7 @@ const Korean = ()=>{
 
     return(
         <>
-            <div className={`${styles.koreanLayout}`}>
+            <div className={`${styles.gridContainer}`}>
                 {koreanFoods.map((koreanFood, index) => 
                     <Place key={index} 
                         name={koreanFood.name} 

@@ -12,7 +12,7 @@ const Place = (props: IProps) => {
     const {name, score, setModalVisible} = props
 
     return (
-        <>
+        <div className={`${styles.gridContent}`}>
             <div onClick={()=>setModalVisible(true)} className={`${styles.place}`}>
                 <div className={`${styles.contentLayout}`}>
                     <div className={`${styles.imgArea}`}>
@@ -27,7 +27,7 @@ const Place = (props: IProps) => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
