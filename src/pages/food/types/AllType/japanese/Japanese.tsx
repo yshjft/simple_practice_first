@@ -21,14 +21,17 @@ const Japanese = ()=>{
         <>
             <div className={`${styles.gridContainer}`}>
                 {japaneseFoods.map((japaneseFood, index)=> 
-                    <Place key={index} 
+                    <Place 
+                        key={index}
+                        type={'food'}
+                        id={japaneseFood.id}
                         name={japaneseFood.name}
                         score={japaneseFood.score} 
                         setModalVisible={setModalVisible}
                     />
                 )}
             </div>
-            <Modal modalVisible={modalVisible} setModalVisible={setModalVisible}/>
+            <Modal type={"food"} modalVisible={modalVisible} setModalVisible={setModalVisible}/>
         </>
     )
 }

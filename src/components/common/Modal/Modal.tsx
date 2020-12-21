@@ -1,14 +1,15 @@
 import React, {useEffect, useRef} from 'react'
-import styles from './Modal.scss'
 import image from '../../../Image/restaurant.jpeg'
+import styles from './Modal.scss'
 
 interface IProps{
+    type: 'food' | 'cafe' | 'park'
     modalVisible: boolean
     setModalVisible: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const Modal = (props: IProps)=>{
-    const {modalVisible, setModalVisible} = props
+    const {type, modalVisible, setModalVisible} = props
     const modalRef = useRef(document.createElement('div'))
 
     useEffect(()=>{
@@ -33,7 +34,9 @@ const Modal = (props: IProps)=>{
                             <div className={`${styles.noImg}`}>NO IMAGE</div>
                             {/* <img src={image} className={`${styles.Img}`}></img> */}
                         </div>
-                        <div className={`${styles.infoArea}`}>info area</div>
+                        <div className={`${styles.infoArea}`}>
+                            info area
+                        </div>
                     </div>
                 </div>
                 <div className={`${styles.footerArea}`}>

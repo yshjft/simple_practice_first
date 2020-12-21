@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux'
 import food from './food'
+import selected from './selected'
 
 const rootReducer = combineReducers({
-    food
+    food,
+    selected
 })
 
 export default rootReducer

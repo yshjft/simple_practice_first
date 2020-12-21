@@ -6,8 +6,6 @@ import Place from '../../../../../components/Place/Place'
 import Modal from '../../../../../components/common/Modal/Modal'
 import styles from '../index.scss'
 
-
-
 const Korean = ()=>{
     const [modalVisible, setModalVisible] = useState<boolean>(false)
     const foods = useSelector((state:RootState)=>state.food)
@@ -21,14 +19,17 @@ const Korean = ()=>{
         <>
             <div className={`${styles.gridContainer}`}>
                 {koreanFoods.map((koreanFood, index) => 
-                    <Place key={index} 
+                    <Place 
+                        key={index} 
+                        type={'food'}
+                        id={koreanFood.id}
                         name={koreanFood.name} 
                         score={koreanFood.score}
                         setModalVisible={setModalVisible}
                     />
                 )}
             </div>
-            <Modal modalVisible={modalVisible} setModalVisible={setModalVisible}/>
+            <Modal  type={'food'} modalVisible={modalVisible} setModalVisible={setModalVisible}/>
         </>
     )
 }
