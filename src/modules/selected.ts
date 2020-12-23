@@ -10,7 +10,7 @@ export const setSelected =  (selectedType:string, selectedId:string)=>{
 
 type SelectedAction = ReturnType<typeof setSelected>
 
-interface ISelected {
+export interface ISelected {
     selectedType: string
     selectedId: string
 }

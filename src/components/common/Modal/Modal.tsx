@@ -1,5 +1,11 @@
 import React, {useEffect, useRef} from 'react'
 import image from '../../../Image/restaurant.jpeg'
+import {useSelector, useDispatch} from 'react-redux'
+import {RootState} from '../../../modules/index'
+import {ISelected} from '../../../modules/selected' 
+import ForFood from './ForFood/ForFood'
+import ForPark from './ForCafe/ForCafe'
+import ForCafe from './ForCafe/ForCafe'
 import styles from './Modal.scss'
 
 interface IProps{
@@ -13,12 +19,10 @@ const Modal = (props: IProps)=>{
     const modalRef = useRef(document.createElement('div'))
 
     useEffect(()=>{
-        if(modalVisible){
-            modalRef.current.style.display = 'block'
-        }else{
-            modalRef.current.style.display = 'none'
-        }
+        if(modalVisible) modalRef.current.style.display = 'block'
+        else modalRef.current.style.display = 'none'
     }, [modalVisible])
+
 
     function closeModal(){
         setModalVisible(false)
@@ -28,17 +32,9 @@ const Modal = (props: IProps)=>{
         <div ref={modalRef} className={`${styles.modalLayout}`}>
             <div className={`${styles.modalArea}`}/>
             <div className={`${styles.modal}`}>
-                <div className={`${styles.contentArea}`}>
-                    <div className={`${styles.content}`}>
-                        <div className={`${styles.imgArea}`}>
-                            <div className={`${styles.noImg}`}>NO IMAGE</div>
-                            {/* <img src={image} className={`${styles.Img}`}></img> */}
-                        </div>
-                        <div className={`${styles.infoArea}`}>
-                            info area
-                        </div>
-                    </div>
-                </div>
+                {type ===  'food' && <ForFood/>}
+                {type ===  'cafe' && <ForCafe/>}
+                {type === 'park' && <ForPark/>}
                 <div className={`${styles.footerArea}`}>
                     <button onClick={closeModal} className={`${styles.btn}`}>닫기</button>
                 </div>

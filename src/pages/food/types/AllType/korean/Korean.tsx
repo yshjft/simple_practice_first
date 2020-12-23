@@ -8,8 +8,9 @@ import styles from '../index.scss'
 
 const Korean = ()=>{
     const [modalVisible, setModalVisible] = useState<boolean>(false)
-    const foods = useSelector((state:RootState)=>state.food)
     const [koreanFoods, setKoreanFoods] = useState<FoodState[]>([])
+    const foods = useSelector((state:RootState)=>state.food)
+    
 
     useEffect(()=>{
         setKoreanFoods(foods.filter(food => food.type === 'korean'))
