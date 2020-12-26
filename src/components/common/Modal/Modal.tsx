@@ -32,7 +32,7 @@ const Modal = (props: IProps)=>{
         <div ref={modalRef} className={`${styles.modalLayout}`}>
             <div className={`${styles.modalArea}`}/>
             <div className={`${styles.modal}`}>
-                {type ===  'food' && <ForFood/>}
+                {type ===  'food' && <ForFood modalVisible={modalVisible}/>}
                 {type ===  'cafe' && <ForCafe/>}
                 {type === 'park' && <ForPark/>}
                 <div className={`${styles.footerArea}`}>

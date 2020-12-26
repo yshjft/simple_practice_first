@@ -33,7 +33,7 @@ const Place = (props: IProps) => {
                     <div className={`${styles.infoArea}`}>
                         <div>
                             <div className={`${styles.infoName}`}>{name}</div>
-                            <div className={`${styles.infoScore}`}>{score} / 5</div>
+                            <div className={`${styles.infoScore}`}>{score}점 / 5점</div>
                         </div>
                     </div>
                 </div>

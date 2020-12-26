@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {useSelector, useDispatch} from 'react-redux'
+import {useSelector} from 'react-redux'
 import {RootState} from '../../../../../modules/index'
 import {FoodState} from '../../../../../modules/food'
 import Place from '../../../../../components/Place/Place'

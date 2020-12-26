@@ -12,7 +12,7 @@ export const setScore = (id:string, score:number) => {
 
 type FoodAction = ReturnType<typeof setScore>
 
-type menu = {
+export type menu = {
     name: string,
     price: number
 }

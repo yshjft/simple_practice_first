@@ -84,6 +84,20 @@
           font-size: 3rem;
           font-weight: bold;
         }
+        .input {
+          width: 10%;
+          padding: 1rem 0.5rem;
+          border-radius: 10px;
+          font-size: 2rem;
+          font-weight: bold;
+        }
+        .input:focus {
+          outline: none;
+        }
+      }
+      .mapArea {
+        width: 5rem;
+        height: 4rem;
       }
       .menuArea {
         width: 100%;
