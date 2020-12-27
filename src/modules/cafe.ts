@@ -4,7 +4,7 @@ import {menu} from './food'
 
 const SET_SCORE =  'cafe/SET_SCORE' as const
 
-export const setScore = (id: string, score: number) => {
+export const setCafeScore = (id: string, score: number) => {
     return  {
         type: SET_SCORE,
         id,
@@ -12,7 +12,7 @@ export const setScore = (id: string, score: number) => {
     }
 }
 
-type CafeAction = ReturnType<typeof setScore>
+type CafeAction = ReturnType<typeof setCafeScore>
 
 export interface CafeState {
     id: string

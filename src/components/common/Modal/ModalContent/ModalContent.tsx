@@ -1,28 +1,41 @@
 import React, {useEffect, useState, useRef} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {RootState} from '../../../../modules/index'
-import {FoodState, setScore} from '../../../../modules/food'
+import {FoodState, setFoodScore} from '../../../../modules/food'
+import {CafeState, setCafeScore} from '../../../../modules/cafe'
 import styles from '../Modal.scss'
 
 interface IProps {
+    type: 'food' | 'cafe' | 'park'
     modalVisible: boolean
 }
 
-const ForFood = (props:IProps) =>{
-    const {modalVisible} = props
+const ModalContent = (props:IProps) =>{
+    const {type, modalVisible} = props
     const selected =  useSelector((state:RootState)=>state.selected)
     const foods = useSelector((state:RootState) => state.food)
+    const cafes = useSelector((state:RootState)=> state.cafe)
     const dispatch = useDispatch()
-    const [selectedFood, setSelectedFood] = useState<FoodState | null>(null)
+    const [selectedDetail, setSelectedDetail] = useState<FoodState | CafeState |null>(null)
     const [scoreMode, setScoreMode] =  useState<'show'|'set'>('show')
     const inputRef =  useRef(document.createElement('input'))
     const mapRef = useRef(document.createElement('div'))
 
     useEffect(()=>{
         const {selectedType, selectedId} =  selected
-        const food = foods.find(food => food.id === selectedId && selectedType === 'food')
-        setSelectedFood(food as FoodState)
-    }, [selected, foods])
+        switch(type){
+            case 'food':
+                const food = foods.find(food => food.id === selectedId && selectedType === type)
+                setSelectedDetail(food as FoodState)
+                break
+            case 'cafe':
+                const cafe =  cafes.find(cafe => cafe.id === selectedId && selectedType === type)
+                setSelectedDetail(cafe as CafeState)
+                break 
+            default:
+                break
+        }        
+    }, [type, selected, foods, cafes])
 
     useEffect(()=>{
         if(modalVisible === true) setScoreMode('show')
@@ -44,7 +57,16 @@ const ForFood = (props:IProps) =>{
 
     function handleOk(){
         const value = Number(inputRef.current.value)
-        dispatch(setScore(selected.selectedId, value))
+        switch(type){
+            case 'food':
+                dispatch(setFoodScore(selected.selectedId, value))
+                break
+            case 'cafe':
+                dispatch(setCafeScore(selected.selectedId, value))
+                break
+            default:
+                break
+        }
         setScoreMode('show')
     }
 
@@ -59,13 +81,15 @@ const ForFood = (props:IProps) =>{
                     <div className={`${styles.infoContentLayout}`}>
                         <div className={`${styles.infoItem}`}>
                             <span className={`${styles.tag}`}>이름 </span>
-                            <span className={`${styles.content}`}>{selectedFood?.name}</span>
+                            <span className={`${styles.content}`}>
+                                {selectedDetail?.name}
+                            </span>
                         </div>
                         
                         <div className={`${styles.menuArea}`}>
-                            <span className={`${styles.tag}`}>대표 메뉴 </span>
+                            <span className={`${styles.tag}`}>메뉴 </span>
                             <span className={`${styles.menuList}`}>
-                                {selectedFood?.menu.map(menu =>  {
+                                {selectedDetail?.menu.map(menu =>  {
                                     return(
                                         <div className={`${styles.menuItem}`}>
                                             <span>{menu.name}</span>
@@ -80,7 +104,7 @@ const ForFood = (props:IProps) =>{
                             {
                                 scoreMode === 'show' ? 
                                 <>
-                                    <span className={`${styles.content}`}>{selectedFood?.score}점 / 5점</span>
+                                    <span className={`${styles.content}`}>{selectedDetail?.score}점 / 5점</span>
                                     <span onClick={changeMode} className={`${styles.btn}`}>평가하기</span>
                                 </> : 
                                 <>
@@ -92,7 +116,7 @@ const ForFood = (props:IProps) =>{
                         </div>
                         <div className={`${styles.infoItem}`}>
                             <span className={`${styles.tag}`}>주소 </span>
-                            <span className={`${styles.content}`}>{selectedFood?.address}</span>
+                            <span className={`${styles.content}`}>{selectedDetail?.address}</span>
                         </div>
                         <div ref={mapRef} className={`${styles.mapArea}`}></div>
                     </div>
@@ -102,4 +126,4 @@ const ForFood = (props:IProps) =>{
     )
 }
 
-export default ForFood
+export default ModalContent

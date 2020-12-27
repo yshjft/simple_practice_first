@@ -2,7 +2,7 @@ import {foodData} from './data'
 
 const SET_SCORE = 'food/SET_SCORE' as const
 
-export const setScore = (id:string, score:number) => {
+export const setFoodScore = (id:string, score:number) => {
     return {
         type: SET_SCORE,
         id,
@@ -10,7 +10,7 @@ export const setScore = (id:string, score:number) => {
     }
 }
 
-type FoodAction = ReturnType<typeof setScore>
+type FoodAction = ReturnType<typeof setFoodScore>
 
 export type menu = {
     name: string,

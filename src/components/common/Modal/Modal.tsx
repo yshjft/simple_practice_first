@@ -3,9 +3,8 @@ import image from '../../../Image/restaurant.jpeg'
 import {useSelector, useDispatch} from 'react-redux'
 import {RootState} from '../../../modules/index'
 import {ISelected} from '../../../modules/selected' 
-import ForFood from './ForFood/ForFood'
-import ForPark from './ForCafe/ForCafe'
-import ForCafe from './ForCafe/ForCafe'
+import ForFood from './ModalContent/ModalContent'
+import ForPark from './ForPark/ForPark'
 import styles from './Modal.scss'
 
 interface IProps{
@@ -32,9 +31,8 @@ const Modal = (props: IProps)=>{
         <div ref={modalRef} className={`${styles.modalLayout}`}>
             <div className={`${styles.modalArea}`}/>
             <div className={`${styles.modal}`}>
-                {type ===  'food' && <ForFood modalVisible={modalVisible}/>}
-                {type ===  'cafe' && <ForCafe/>}
-                {type === 'park' && <ForPark/>}
+                <ForFood type={type} modalVisible={modalVisible}/>
+                {/* {type === 'park' && <ForPark/>} */}
                 <div className={`${styles.footerArea}`}>
                     <button onClick={closeModal} className={`${styles.btn}`}>닫기</button>
                 </div>
