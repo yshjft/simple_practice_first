@@ -1,4 +1,3 @@
-import { REPLCommand } from 'repl'
 import {cafeData} from './data'
 import {menu} from './food'
 

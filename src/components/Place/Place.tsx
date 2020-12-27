@@ -9,7 +9,7 @@ interface IProps {
     type: 'food' | 'cafe' | 'park'
     id: string 
     name: string
-    score: number
+    score?: number
     setModalVisible: React.Dispatch<React.SetStateAction<boolean>>
 }
 
@@ -33,7 +33,7 @@ const Place = (props: IProps) => {
                     <div className={`${styles.infoArea}`}>
                         <div>
                             <div className={`${styles.infoName}`}>{name}</div>
-                            <div className={`${styles.infoScore}`}>{score}점 / 5점</div>
+                            {type !== 'park' && <div className={`${styles.infoScore}`}>{score}점 / 5점</div>}
                         </div>
                     </div>
                 </div>

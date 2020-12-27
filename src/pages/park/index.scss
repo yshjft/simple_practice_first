@@ -1,0 +1,22 @@
+.parkLayout {
+  margin: 5rem 0;
+}
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+}
+@media (max-width: 1400px) {
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+}
+@media (max-width: 500px) {
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+}
