@@ -12,6 +12,12 @@ interface IProps {
     modalVisible: boolean
 }
 
+declare global {
+    interface Window {
+        kakao: any;
+    }
+}
+
 const ModalContent = (props:IProps) =>{
     const {type, modalVisible} = props
     const selected =  useSelector((state:RootState)=>state.selected)
@@ -43,7 +49,7 @@ const ModalContent = (props:IProps) =>{
             default:
                 break
         }        
-    }, [type, selected, foods, cafes])
+    }, [type, selected, foods, cafes, parks])
 
     useEffect(()=>{
         if(modalVisible === true) setScoreMode('show')
@@ -96,11 +102,10 @@ const ModalContent = (props:IProps) =>{
                             (<div className={`${styles.menuArea}`}>
                                 <span className={`${styles.tag}`}>메뉴 </span>
                                 <span className={`${styles.menuList}`}>
-                                    {selectedDetail?.menu.map(menu =>  {
+                                    {selectedDetail?.menu.map((menu, i) =>  {
                                         return(
-                                            <div className={`${styles.menuItem}`}>
-                                                <span>{menu.name}</span>
-                                                <span>{menu.price}원</span>
+                                            <div key={i} className={`${styles.menuItem}`}>
+                                                <span>{menu.name} {menu.price}원</span>
                                             </div>
                                         )
                                     })}
@@ -135,7 +140,7 @@ const ModalContent = (props:IProps) =>{
                             {type !== 'park' && <span className={`${styles.content}`}>{selectedDetail?.address}</span>}
                             {type === 'park' && <span className={`${styles.content}`}>{selectedDetailPark?.address}</span>}
                         </div>
-                        <div ref={mapRef} className={`${styles.mapArea}`}></div>
+                        <div id='map' ref={mapRef} className={`${styles.mapArea}`}></div>
                     </div>
                 </div>
             </div>
